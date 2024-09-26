@@ -14,7 +14,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.com.google.lens.oem_camera_package=com.android.camera \
     ro.miui.notch=1 \
-    ro.product.mod_device=evergo_in_global
+    ro.product.mod_device=camellian_id_global
 
 # Sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += \
