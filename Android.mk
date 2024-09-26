@@ -4,7 +4,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter everpal,$(TARGET_DEVICE)),)
+ifneq ($(filter camellia,$(TARGET_DEVICE)),)
 
 CAMERA_LIBRARIES := libcamera_algoup_jni.xiaomi.so libcamera_mianode_jni.xiaomi.so
 
@@ -13,7 +13,7 @@ $(CAMERA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "MiuiCamera lib link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /system/lib64/$(notdir $@) $@
+	$(hide) ln -sf /vendor/lib64/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CAMERA_SYMLINKS)
 

@@ -29,7 +29,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "everpal"
+write_headers "camellia"
 sed -i 's|device/|vendor/|g' "$ANDROIDBP" "$ANDROIDMK" "$BOARDMK" "$PRODUCTMK"
 
 cat << 'EOF' >> "$ANDROIDMK"
@@ -40,7 +40,7 @@ $(CAMERA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "MiuiCamera lib link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /system/lib64/$(notdir $@) $@
+	$(hide) ln -sf /vendor/lib64/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CAMERA_SYMLINKS)
 
